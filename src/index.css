@@ -131,3 +131,8 @@ textarea:focus-visible {
 .dark .glass {
   @apply bg-black/30 backdrop-blur-md border border-white/10;
 }
+
+/* Add transition for theme switching */
+html {
+  transition: color 0.3s ease, background-color 0.3s ease;
+}

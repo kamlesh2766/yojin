@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Calendar, Dumbbell, LineChart, Settings, UserPlus } from "lucide-react";
 import { motion } from "framer-motion";
+import { ThemeToggle } from "@/components/theme/ThemeToggle";
 
 const ProfileTab = () => {
   const [user] = useState({
@@ -43,9 +44,12 @@ const ProfileTab = () => {
     <div className="pb-20">
       <header className="sticky top-0 z-10 glass py-4 px-4 flex justify-between items-center border-b">
         <h1 className="text-xl font-semibold">Profile</h1>
-        <Button variant="ghost" size="icon" className="rounded-full">
-          <Settings className="h-5 w-5" />
-        </Button>
+        <div className="flex items-center gap-1">
+          <ThemeToggle />
+          <Button variant="ghost" size="icon" className="rounded-full">
+            <Settings className="h-5 w-5" />
+          </Button>
+        </div>
       </header>
 
       <main className="p-4 space-y-6">
