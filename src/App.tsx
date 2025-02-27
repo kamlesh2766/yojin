@@ -18,6 +18,7 @@ import Workouts from "./pages/Workouts";
 import Profile from "./pages/Profile";
 import WorkoutDetail from "./pages/WorkoutDetail";
 import RoutineCreator from "./pages/RoutineCreator";
+import ExerciseDetail from "./pages/ExerciseDetail";
 
 const queryClient = new QueryClient();
 
@@ -40,6 +41,7 @@ const App = () => (
               <Route path="/workout/:id" element={<WorkoutDetail />} />
               <Route path="/workout/new" element={<WorkoutDetail />} />
               <Route path="/routines/new" element={<RoutineCreator />} />
+              <Route path="/exercise/:id" element={<ExerciseDetail />} />
               {/* Catch-all route for 404 */}
               <Route path="*" element={<NotFound />} />
             </Routes>

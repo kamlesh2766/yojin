@@ -5,8 +5,9 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Calendar, Clock, Plus, Star } from "lucide-react";
+import { Calendar, Clock, Dumbbell, Plus, Search, Star } from "lucide-react";
 import RoutineList from "./RoutineList";
+import ExerciseLibrary from "./ExerciseLibrary";
 
 const WorkoutTab = () => {
   const navigate = useNavigate();
@@ -116,9 +117,10 @@ const WorkoutTab = () => {
 
       <main className="p-4">
         <Tabs defaultValue="recommended" className="w-full">
-          <TabsList className="grid w-full grid-cols-2 mb-6">
+          <TabsList className="grid w-full grid-cols-3 mb-6">
             <TabsTrigger value="recommended">Recommended</TabsTrigger>
             <TabsTrigger value="routines">My Routines</TabsTrigger>
+            <TabsTrigger value="exercises">Exercises</TabsTrigger>
           </TabsList>
           
           <TabsContent value="recommended" className="space-y-6">
@@ -199,6 +201,10 @@ const WorkoutTab = () => {
           
           <TabsContent value="routines">
             <RoutineList />
+          </TabsContent>
+          
+          <TabsContent value="exercises">
+            <ExerciseLibrary />
           </TabsContent>
         </Tabs>
       </main>
