@@ -45,11 +45,8 @@ const ExerciseDetail = () => {
       </header>
 
       <main className="p-4 space-y-6">
-        <div 
-          className="w-full h-64 bg-cover bg-center rounded-lg overflow-hidden"
-          style={{ backgroundImage: `url(${exercise.image || 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2070'})` }}
-        >
-          <div className="w-full h-full flex items-end bg-gradient-to-t from-black/70 to-transparent p-4">
+        <div className="w-full h-64 bg-gradient-to-br from-primary/20 to-secondary/30 rounded-lg overflow-hidden">
+          <div className="w-full h-full flex items-end bg-gradient-to-t from-black/50 to-transparent p-4">
             <div>
               <h1 className="text-white text-2xl font-bold mb-1">{exercise.name}</h1>
               <div className="flex flex-wrap gap-1">

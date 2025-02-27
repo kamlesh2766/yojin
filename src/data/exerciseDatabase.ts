@@ -21,8 +21,7 @@ export const exerciseDatabase: Exercise[] = [
       "Keep your feet flat on the ground",
       "Maintain a slight arch in your lower back",
       "Keep your wrists straight and elbows at a 45-degree angle from your body"
-    ],
-    image: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=2070"
+    ]
   },
   {
     id: "e2",
@@ -43,8 +42,7 @@ export const exerciseDatabase: Exercise[] = [
       "Keep your chest up and back straight",
       "Ensure your knees track over your toes",
       "Breathe in as you descend and out as you rise"
-    ],
-    image: "https://images.unsplash.com/photo-1566241142248-11108c522a21?q=80&w=2070"
+    ]
   },
   {
     id: "e3",
@@ -65,8 +63,7 @@ export const exerciseDatabase: Exercise[] = [
       "Keep the bar close to your body throughout the movement",
       "Maintain a neutral spine position",
       "Engage your core before lifting"
-    ],
-    image: "https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?q=80&w=2787"
+    ]
   },
   {
     id: "e4",
@@ -86,8 +83,7 @@ export const exerciseDatabase: Exercise[] = [
       "Keep your core engaged throughout the movement",
       "Avoid swinging or kipping",
       "Focus on squeezing your back muscles"
-    ],
-    image: "https://images.unsplash.com/photo-1571945153237-4929e783af4a?q=80&w=2787"
+    ]
   },
   {
     id: "e5",
@@ -107,8 +103,7 @@ export const exerciseDatabase: Exercise[] = [
       "Keep your core engaged and avoid arching your back",
       "Don't lock out your elbows at the top",
       "Lower the weights slowly to increase time under tension"
-    ],
-    image: "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=2070"
+    ]
   },
   {
     id: "e6",
@@ -127,8 +122,7 @@ export const exerciseDatabase: Exercise[] = [
       "Avoid swinging your body to lift the weights",
       "Maintain a slight bend in the knees",
       "Focus on squeezing the biceps at the top of the movement"
-    ],
-    image: "https://images.unsplash.com/photo-1581009137042-c552e485697a?q=80&w=2070"
+    ]
   },
   {
     id: "e7",
@@ -148,8 +142,7 @@ export const exerciseDatabase: Exercise[] = [
       "Keep your upper arms stationary throughout the movement",
       "Maintain a slight bend in the knees",
       "Focus on the mind-muscle connection with your triceps"
-    ],
-    image: "https://images.unsplash.com/photo-1595078475845-89b5ad4e85e9?q=80&w=2069"
+    ]
   },
   {
     id: "e8",
@@ -170,8 +163,7 @@ export const exerciseDatabase: Exercise[] = [
       "Don't allow your knees to cave inward",
       "Keep your lower back pressed against the pad",
       "Avoid placing your hands on your knees"
-    ],
-    image: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=2070"
+    ]
   },
   {
     id: "e9",
@@ -191,8 +183,7 @@ export const exerciseDatabase: Exercise[] = [
       "Maintain an upright posture throughout the exercise",
       "Avoid leaning back excessively",
       "Focus on pulling with your back, not your arms"
-    ],
-    image: "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=2069"
+    ]
   },
   {
     id: "e10",
@@ -211,8 +202,7 @@ export const exerciseDatabase: Exercise[] = [
       "Maintain the bend in your elbows throughout the movement",
       "Focus on using your chest muscles, not your shoulders",
       "Control the movement both down and up"
-    ],
-    image: "https://images.unsplash.com/photo-1597076545197-530e8a383732?q=80&w=2070"
+    ]
   },
   {
     id: "e11",
@@ -232,8 +222,7 @@ export const exerciseDatabase: Exercise[] = [
       "Don't let your hips sag or pike up",
       "Keep your neck in a neutral position",
       "Breathe regularly throughout the hold"
-    ],
-    image: "https://images.unsplash.com/photo-1566241142248-11108c522a21?q=80&w=2070"
+    ]
   },
   {
     id: "e12",
@@ -252,8 +241,7 @@ export const exerciseDatabase: Exercise[] = [
       "The further you lean back, the more challenging it becomes",
       "Add weight for increased difficulty",
       "Keep your movements controlled and deliberate"
-    ],
-    image: "https://images.unsplash.com/photo-1594381898411-846e7d193883?q=80&w=2787"
+    ]
   },
   {
     id: "e13",
@@ -272,8 +260,7 @@ export const exerciseDatabase: Exercise[] = [
       "Stand near a wall or sturdy object for balance if needed",
       "For added resistance, hold dumbbells or stand on an elevated surface",
       "Focus on a full range of motion"
-    ],
-    image: "https://images.unsplash.com/photo-1602614023135-58368e78d8d1?q=80&w=2787"
+    ]
   },
   {
     id: "e14",
@@ -293,8 +280,7 @@ export const exerciseDatabase: Exercise[] = [
       "Keep your hips down and core engaged",
       "Maintain a steady rhythm",
       "Breathe regularly throughout the exercise"
-    ],
-    image: "https://images.unsplash.com/photo-1599058917765-a780eda07a3e?q=80&w=2069"
+    ]
   },
   {
     id: "e15",
@@ -316,8 +302,7 @@ export const exerciseDatabase: Exercise[] = [
       "Focus on pulling with your rear deltoids, not your arms",
       "Keep your chest up and maintain good posture",
       "Use a lighter weight to ensure proper form"
-    ],
-    image: "https://images.unsplash.com/photo-1584863231364-2edc166de576?q=80&w=2070"
+    ]
   }
 ];
 

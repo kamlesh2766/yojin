@@ -263,10 +263,9 @@ const ExerciseLibrary = () => {
               <Card className="overflow-hidden cursor-pointer hover:border-primary/50 transition-all">
                 <CardContent className="p-0">
                   <div className="flex">
-                    <div 
-                      className="w-1/3 bg-cover bg-center h-24" 
-                      style={{ backgroundImage: `url(${exercise.image || 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2070'})` }}
-                    />
+                    <div className="w-1/3 bg-gradient-to-br from-primary/10 to-secondary/20 flex items-center justify-center h-24">
+                      <Dumbbell className="h-8 w-8 text-primary/50" />
+                    </div>
                     <div className="w-2/3 p-3">
                       <h3 className="font-medium text-base mb-1">{exercise.name}</h3>
                       <div className="flex flex-wrap gap-1 mb-2">
