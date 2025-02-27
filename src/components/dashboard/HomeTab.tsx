@@ -16,13 +16,13 @@ const mockPosts = [
       avatar: "https://i.pravatar.cc/150?img=23",
       username: "alex_fit",
     },
-    content: "Just completed my 5x5 bench press progression! Up 10lbs from last week.",
+    content: "Just completed my 5x5 bench press progression! Up 5kg from last week.",
     image: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
     workout: {
       name: "Chest Day",
       exercises: [
-        { name: "Bench Press", sets: 5, reps: 5, weight: "185lb" },
-        { name: "Incline DB Press", sets: 3, reps: 10, weight: "65lb" },
+        { name: "Bench Press", sets: 5, reps: 5, weight: "85kg" },
+        { name: "Incline DB Press", sets: 3, reps: 10, weight: "30kg" },
       ],
     },
     likes: 24,
@@ -41,7 +41,7 @@ const mockPosts = [
     workout: {
       name: "Pull Day",
       exercises: [
-        { name: "Deadlift", sets: 3, reps: 5, weight: "225lb" },
+        { name: "Deadlift", sets: 3, reps: 5, weight: "100kg" },
         { name: "Pull-ups", sets: 3, reps: 8, weight: "BW" },
       ],
     },

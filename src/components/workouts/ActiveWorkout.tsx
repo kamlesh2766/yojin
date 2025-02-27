@@ -37,7 +37,7 @@ const ActiveWorkout = () => {
       id: "e1",
       name: "Bench Press",
       previousData: {
-        weight: "185",
+        weight: "85",
         reps: "8",
         date: "Apr 15",
       },
@@ -51,7 +51,7 @@ const ActiveWorkout = () => {
       id: "e2",
       name: "Incline Dumbbell Press",
       previousData: {
-        weight: "65",
+        weight: "30",
         reps: "10",
         date: "Apr 15",
       },
