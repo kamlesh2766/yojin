@@ -1,69 +1,176 @@
-# Welcome to your Lovable project
 
-## Project info
+# StrengthRing - Fitness Tracking Application
 
-**URL**: https://lovable.dev/projects/b8744f78-f226-409a-ad65-a6ca43e7fac1
+## Application Overview
 
-## How can I edit this code?
+StrengthRing is a premium fitness tracking application designed to help users set and achieve their fitness goals. The app offers personalized workout routines based on user preferences, comprehensive workout tracking, and social interaction features to maintain motivation and accountability.
 
-There are several ways of editing your application.
+## User Flow
 
-**Use Lovable**
+1. **Welcome & Authentication**
+   - Users are greeted with a clean welcome screen
+   - Options to sign up or log in
+   - Simple email-based authentication
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/b8744f78-f226-409a-ad65-a6ca43e7fac1) and start prompting.
+2. **Fitness Type Survey**
+   - After signup, users select their fitness focus:
+     - Athletics (cardio, agility, endurance)
+     - Body Building (muscle growth, strength)
+     - Calisthenics (bodyweight exercises, mobility)
+   - This selection personalizes workout recommendations
 
-Changes made via Lovable will be committed automatically to this repo.
+3. **Main Dashboard**
+   - Three primary tabs for navigation:
+     - Home (Social Feed)
+     - Workout
+     - Profile
 
-**Use your preferred IDE**
+### Home Tab (Social Feed)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- Displays progress posts from other users
+- Each post shows:
+  - User details (name, avatar)
+  - Workout summary
+  - Exercise data (sets, reps, weights)
+  - Social interaction options (likes, comments)
+- Users can view workout details and engage with posts
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Workout Tab
 
-Follow these steps:
+- **Recommended Workouts**
+  - Personalized based on fitness type selection
+  - Shows workout details (duration, difficulty)
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+- **My Routines**
+  - "Start Empty Workout" option for free-form tracking
+  - "New Routine" option to create custom routines
+  - List of user-created routines with start options
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+- **Routine Creation**
+  - Users can name their routine
+  - Search and select exercises from a library
+  - Add multiple exercises to create a complete routine
 
-# Step 3: Install the necessary dependencies.
-npm i
+### Active Workout Interface
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+- **Set Tracking**
+  - For each exercise:
+    - Previous workout data shown for reference
+    - Weight input field
+    - Reps input field
+    - Completion checkbox
+  - Option to add additional sets
+  - Volume calculator (weight × reps × sets)
+  - Workout timer tracking session duration
 
-**Edit a file directly in GitHub**
+### Profile Tab
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- User details (photo, name, username)
+- Fitness statistics:
+  - Total completed workouts
+  - Follower/following counts
+- Activity history showing recent workouts
+- Progress charts to visualize improvements
 
-**Use GitHub Codespaces**
+## Technical Features
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+1. **Data Persistence**
+   - Workout history saved locally
+   - User preferences stored
+   - Exercise library with categorization
 
-## What technologies are used for this project?
+2. **State Management**
+   - Track current workout stats in real-time
+   - Calculate and update workout volume
+   - Manage navigation between tabs and screens
 
-This project is built with .
+3. **UI/UX**
+   - Clean, minimalist design
+   - Smooth animations and transitions
+   - Intuitive workout tracking interface
+   - Accessible input methods for workout data
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+4. **Social Features**
+   - View other users' progress
+   - Social engagement (likes, comments)
+   - Follow mechanism for tracking preferred profiles
 
-## How can I deploy this project?
+## Implementation Details
 
-Simply open [Lovable](https://lovable.dev/projects/b8744f78-f226-409a-ad65-a6ca43e7fac1) and click on Share -> Publish.
+### Core Components
 
-## I want to use a custom domain - is that possible?
+1. **Authentication Components**
+   - SignupForm
+   - LoginForm
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+2. **Survey Components**
+   - FitnessSurvey (selection interface)
+
+3. **Layout Components**
+   - TabBar (bottom navigation)
+
+4. **Dashboard Components**
+   - HomeTab (social feed)
+   - WorkoutTab (routine management)
+   - ProfileTab (user information)
+
+5. **Workout Components**
+   - RoutineList
+   - ActiveWorkout (tracking interface)
+   - RoutineCreator
+
+### Pages Structure
+
+- Index (welcome)
+- Login
+- Signup
+- Survey
+- Dashboard (social feed)
+- Workouts (routine management)
+- Profile
+- WorkoutDetail (active workout)
+- RoutineCreator
+
+### Data Models
+
+1. **User**
+   - Personal information
+   - Fitness preferences
+   - Statistics
+
+2. **Workout**
+   - Collection of exercises
+   - Metadata (date, duration)
+   - Performance metrics
+
+3. **Exercise**
+   - Name and category
+   - Sets, reps, weight tracking
+   - Progress history
+
+4. **Social Posts**
+   - Workout content
+   - Engagement metrics
+   - User attribution
+
+## Development Priorities
+
+1. **MVP Features**
+   - Authentication flow
+   - Basic workout tracking
+   - Routine creation and management
+
+2. **Secondary Features**
+   - Social feed implementation
+   - Progress visualization
+   - Enhanced workout recommendations
+
+3. **Future Enhancements**
+   - Offline functionality
+   - Advanced analytics
+   - Gamification elements
+   - Expanded exercise library
+
+---
+
+This document outlines the core structure and functionality of the StrengthRing application, providing clear guidance for implementation while allowing flexibility for design decisions during development.
