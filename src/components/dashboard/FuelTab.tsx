@@ -38,7 +38,7 @@ const ingredientCategories = [
   }
 ];
 
-// Mock data for recipes
+// Mock data for recipes - expanded with more options
 const mockRecipes = [
   {
     id: 1,
@@ -89,15 +89,86 @@ const mockRecipes = [
     calories: 340,
     prepTime: "5 min + overnight",
     mealType: "Breakfast"
+  },
+  {
+    id: 6,
+    name: "Mediterranean Tuna Salad",
+    image: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    ingredients: ["Tuna", "Bell Peppers", "Onions", "Olives", "Lemon"],
+    macros: { protein: 28, carbs: 12, fat: 10 },
+    calories: 280,
+    prepTime: "10 min",
+    mealType: "Lunch"
+  },
+  {
+    id: 7,
+    name: "Beef & Broccoli Stir-Fry",
+    image: "https://images.unsplash.com/photo-1512058564366-18510be2db19?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    ingredients: ["Beef", "Broccoli", "Brown Rice", "Carrots", "Onions"],
+    macros: { protein: 32, carbs: 45, fat: 12 },
+    calories: 420,
+    prepTime: "20 min",
+    mealType: "Dinner"
+  },
+  {
+    id: 8,
+    name: "Greek Yogurt Parfait",
+    image: "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    ingredients: ["Greek Yogurt", "Berries", "Honey", "Almonds", "Chia Seeds"],
+    macros: { protein: 20, carbs: 30, fat: 8 },
+    calories: 275,
+    prepTime: "5 min",
+    mealType: "Breakfast"
+  },
+  {
+    id: 9,
+    name: "Tofu & Vegetable Curry",
+    image: "https://images.unsplash.com/photo-1547592180-85f173990554?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    ingredients: ["Tofu", "Bell Peppers", "Spinach", "Coconut Milk", "Quinoa"],
+    macros: { protein: 22, carbs: 35, fat: 15 },
+    calories: 380,
+    prepTime: "30 min",
+    mealType: "Dinner"
+  },
+  {
+    id: 10,
+    name: "Turkey & Avocado Wrap",
+    image: "https://images.unsplash.com/photo-1528736235302-52922df5c122?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    ingredients: ["Turkey", "Avocado", "Whole Wheat Bread", "Spinach", "Tomatoes"],
+    macros: { protein: 25, carbs: 28, fat: 12 },
+    calories: 330,
+    prepTime: "10 min",
+    mealType: "Lunch"
+  },
+  {
+    id: 11,
+    name: "Shrimp & Zucchini Noodles",
+    image: "https://images.unsplash.com/photo-1551248429-40975aa4de74?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    ingredients: ["Shrimp", "Zucchini", "Garlic", "Lemon", "Olive Oil"],
+    macros: { protein: 28, carbs: 15, fat: 9 },
+    calories: 260,
+    prepTime: "15 min",
+    mealType: "Dinner"
+  },
+  {
+    id: 12,
+    name: "Lentil & Vegetable Soup",
+    image: "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    ingredients: ["Lentils", "Carrots", "Onions", "Tomatoes", "Spinach"],
+    macros: { protein: 18, carbs: 40, fat: 3 },
+    calories: 280,
+    prepTime: "35 min",
+    mealType: "Lunch"
   }
 ];
 
 const FuelTab = () => {
   const [selectedIngredients, setSelectedIngredients] = useState<string[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
-  const [matchedRecipes, setMatchedRecipes] = useState<typeof mockRecipes>([]);
-  const [activeTab, setActiveTab] = useState("ingredients");
+  const [matchedRecipes, setMatchedRecipes] = useState<typeof mockRecipes>(mockRecipes); // Show all recipes by default
+  const [activeTab, setActiveTab] = useState("recipes"); // Start with recipes tab active
   const [loading, setLoading] = useState(false);
+  const [recipeSearch, setRecipeSearch] = useState("");
 
   // Filter ingredients based on search query
   const filteredIngredients = ingredientCategories.map(category => ({
@@ -116,10 +187,13 @@ const FuelTab = () => {
     );
   };
 
-  // Find recipes based on selected ingredients
+  // Filter recipes based on selected ingredients
   useEffect(() => {
     if (selectedIngredients.length === 0) {
-      setMatchedRecipes([]);
+      // Show all recipes when no ingredients are selected
+      setMatchedRecipes(mockRecipes.filter(recipe => 
+        recipe.name.toLowerCase().includes(recipeSearch.toLowerCase())
+      ));
       return;
     }
 
@@ -130,7 +204,7 @@ const FuelTab = () => {
       const results = mockRecipes.filter(recipe => 
         selectedIngredients.some(ingredient => 
           recipe.ingredients.includes(ingredient)
-        )
+        ) && recipe.name.toLowerCase().includes(recipeSearch.toLowerCase())
       ).sort((a, b) => {
         // Sort by how many ingredients match (most matches first)
         const aMatches = a.ingredients.filter(i => selectedIngredients.includes(i)).length;
@@ -140,12 +214,8 @@ const FuelTab = () => {
       
       setMatchedRecipes(results);
       setLoading(false);
-      
-      if (results.length > 0) {
-        setActiveTab("recipes");
-      }
     }, 800);
-  }, [selectedIngredients]);
+  }, [selectedIngredients, recipeSearch]);
 
   // Clear all selected ingredients
   const clearAllIngredients = () => {
@@ -165,13 +235,13 @@ const FuelTab = () => {
         <Card>
           <CardHeader className="pb-3">
             <CardTitle className="text-lg flex justify-between items-center">
-              Find Recipes with Your Ingredients
+              Find Healthy Recipes
               <CookingPot className="h-5 w-5 text-primary" />
             </CardTitle>
           </CardHeader>
           <CardContent>
             <p className="text-sm text-muted-foreground mb-4">
-              Select ingredients you have, and we'll find healthy recipes for your fitness goals.
+              Browse all recipes or filter by ingredients you have to find meals that match your fitness goals.
             </p>
             
             {selectedIngredients.length > 0 && (
@@ -221,7 +291,7 @@ const FuelTab = () => {
                 </span>
               )}
             </TabsTrigger>
-            <TabsTrigger value="recipes" disabled={matchedRecipes.length === 0}>
+            <TabsTrigger value="recipes">
               Recipes
               {matchedRecipes.length > 0 && (
                 <span className="ml-1.5 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-[10px] text-primary-foreground">
@@ -279,6 +349,16 @@ const FuelTab = () => {
           </TabsContent>
           
           <TabsContent value="recipes" className="space-y-4 mt-4">
+            <div className="relative mb-4">
+              <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
+              <Input
+                placeholder="Search recipes..."
+                value={recipeSearch}
+                onChange={e => setRecipeSearch(e.target.value)}
+                className="pl-9 pr-4 h-10"
+              />
+            </div>
+
             {loading ? (
               // Loading skeletons
               Array.from({ length: 3 }).map((_, i) => (
@@ -357,7 +437,7 @@ const FuelTab = () => {
             ) : (
               <div className="text-center py-12">
                 <CookingPot className="h-12 w-12 mx-auto text-muted-foreground opacity-20 mb-3" />
-                <p className="text-muted-foreground">Select ingredients to find matching recipes</p>
+                <p className="text-muted-foreground">No recipes match your criteria</p>
               </div>
             )}
           </TabsContent>
