@@ -1,5 +1,6 @@
 
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -429,7 +430,9 @@ const FuelTab = () => {
                         </div>
                       </div>
                       
-                      <Button className="w-full mt-4">View Recipe</Button>
+                      <Link to={`/recipe/${recipe.id}`}>
+                        <Button className="w-full mt-4">View Recipe</Button>
+                      </Link>
                     </CardContent>
                   </Card>
                 </motion.div>
