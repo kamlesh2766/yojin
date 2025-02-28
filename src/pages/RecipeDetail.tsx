@@ -6,7 +6,7 @@ import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
 
-// Mock data for recipes - this should match the data in FuelTab
+// Mock data for recipes - complete with full instructions for all recipes
 const mockRecipes = [
   {
     id: 1,
@@ -291,13 +291,29 @@ const RecipeDetail = () => {
     );
   }
   
+  // Animation variants for staggered animation of instructions
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+  
+  const item = {
+    hidden: { opacity: 0, x: -20 },
+    show: { opacity: 1, x: 0 }
+  };
+  
   return (
     <div className="pb-20">
       <div className="relative h-64 sm:h-80">
         <Button 
           variant="outline" 
           size="icon"
-          className="absolute top-4 left-4 z-10 bg-white/90 rounded-full h-10 w-10"
+          className="absolute top-4 left-4 z-10 bg-white/90 dark:bg-background/90 rounded-full h-10 w-10"
           onClick={() => navigate("/fuel")}
         >
           <ArrowLeft className="h-5 w-5" />
@@ -362,19 +378,22 @@ const RecipeDetail = () => {
         
         <div>
           <h2 className="text-lg font-medium mb-3">Instructions</h2>
-          <ol className="space-y-3 pl-5 list-decimal">
+          <motion.ol 
+            className="space-y-3 pl-5 list-decimal"
+            variants={container}
+            initial="hidden"
+            animate="show"
+          >
             {recipe.instructions.map((step, index) => (
               <motion.li 
                 key={index}
-                initial={{ opacity: 0, x: -10 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.1 }}
+                variants={item}
                 className="text-sm text-muted-foreground"
               >
                 {step}
               </motion.li>
             ))}
-          </ol>
+          </motion.ol>
         </div>
       </div>
     </div>

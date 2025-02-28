@@ -430,7 +430,7 @@ const FuelTab = () => {
                         </div>
                       </div>
                       
-                      <Link to={`/recipe/${recipe.id}`}>
+                      <Link to={`/recipe/${recipe.id}`} className="block w-full">
                         <Button className="w-full mt-4">View Recipe</Button>
                       </Link>
                     </CardContent>

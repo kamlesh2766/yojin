@@ -27,10 +27,10 @@ const App = () => (
   <QueryClientProvider client={queryClient}>
     <ThemeProvider defaultTheme="system" storageKey="strength-ring-theme">
       <TooltipProvider>
-        <AnimatePresence mode="wait">
-          <Toaster />
-          <Sonner />
-          <BrowserRouter>
+        <BrowserRouter>
+          <AnimatePresence mode="wait">
+            <Toaster />
+            <Sonner />
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/login" element={<Login />} />
@@ -48,8 +48,8 @@ const App = () => (
               {/* Catch-all route for 404 */}
               <Route path="*" element={<NotFound />} />
             </Routes>
-          </BrowserRouter>
-        </AnimatePresence>
+          </AnimatePresence>
+        </BrowserRouter>
       </TooltipProvider>
     </ThemeProvider>
   </QueryClientProvider>
