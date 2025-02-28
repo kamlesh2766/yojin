@@ -1,10 +1,11 @@
 
 import { motion } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
-import { Home, Dumbbell, User } from "lucide-react";
+import { CookingPot, Dumbbell, Home, User } from "lucide-react";
 
 const tabs = [
   { path: "/dashboard", icon: <Home className="h-5 w-5" />, label: "Home" },
+  { path: "/fuel", icon: <CookingPot className="h-5 w-5" />, label: "Fuel" },
   { path: "/workouts", icon: <Dumbbell className="h-5 w-5" />, label: "Workout" },
   { path: "/profile", icon: <User className="h-5 w-5" />, label: "Profile" },
 ];
