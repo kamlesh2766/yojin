@@ -30,7 +30,7 @@ const Index = () => {
             <div className="absolute inset-0 rounded-full bg-primary/20 animate-pulse-subtle"></div>
             <div className="absolute inset-2 rounded-full bg-primary/30"></div>
             <div className="absolute inset-4 rounded-full bg-primary/60 flex items-center justify-center">
-              <span className="text-2xl font-bold text-white">SR</span>
+              <span className="text-2xl font-bold text-white font-yojin">YJ</span>
             </div>
           </div>
         </motion.div>
@@ -39,9 +39,9 @@ const Index = () => {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.5 }}
-          className="text-4xl font-bold tracking-tight"
+          className="text-4xl font-bold tracking-tight font-yojin"
         >
-          StrengthRing
+          YOJIN
         </motion.h1>
 
         <motion.p 

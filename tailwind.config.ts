@@ -21,6 +21,7 @@ export default {
 		extend: {
 			fontFamily: {
 				sans: ['Inter var', 'sans-serif'],
+				yojin: ['Cinzel', 'serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
